@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "message": "",
+  "data": [
+    {
+      "id": "1",
+      "staff_id": "4",
+      "staff_name": "Will Jackson",
+      "school_id": "0999",
+      "school_name": "Colab Academy Kaduna",
+      "description": "Retirement in 1 month, 4 day(s)",
+      "status": "read",
+      "created_at": "2019-11-11 16:49:44"
+    },
+    {
+      "id": "2",
+      "staff_id": "4",
+      "staff_name": "Will Jackson",
+      "school_id": "0999",
+      "school_name": "Colab Academy Kaduna",
+      "description": "Retirement in 4 day(s)",
+      "status": "unread",
+      "created_at": "2019-11-11 16:56:58"
+    }
+  ],
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZmYuc2Nob29sbW8uYXBwIiwiaWF0IjoxNTc0OTIyNjUxLCJleHAiOjE1NzQ5MjYyNTEsInNjaG9vbGlkIjpudWxsLCJ1c2VyaWQiOm51bGwsInVzZXJ0eXBlIjoiYWRtaW4iLCJzY2hvb2xuYW1lIjoic2Nob29sbW8ifQ.6aBMQCKcv04QCUAEIdUZQ0x7aJxX7jqQwuR2VuOmhE4"
+}

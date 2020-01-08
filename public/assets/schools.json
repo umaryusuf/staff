@@ -1,0 +1,618 @@
+{
+  "status": "success",
+  "data": [
+    { "schoolid": "0001", "schoolname": "Kingdom Heritage Model School, Aba" },
+    {
+      "schoolid": "0003",
+      "schoolname": "Kingdom Heritage Model School Makurdi"
+    },
+    {
+      "schoolid": "0002",
+      "schoolname": "Kingdom Heritage Model School, Canaanland"
+    },
+    {
+      "schoolid": "0004",
+      "schoolname": "Kingdom Heritage Model School, Raji O"
+    },
+    {
+      "schoolid": "0005",
+      "schoolname": "Kingdom Heritage Model School, Kubwa"
+    },
+    {
+      "schoolid": "0006",
+      "schoolname": "Kingdom Heritage Model School, Byazhin"
+    },
+    {
+      "schoolid": "0007",
+      "schoolname": "Kingdom Heritage Model School, Barnawa, Kaduna"
+    },
+    {
+      "schoolid": "0008",
+      "schoolname": "Kingdom Heritage Model School Ikpoba Hill, Benin City"
+    },
+    {
+      "schoolid": "0009",
+      "schoolname": "Kingdom Heritage Model School, Ilorin"
+    },
+    {
+      "schoolid": "0010",
+      "schoolname": "Kingdom Heritage Model School, Abakaliki"
+    },
+    {
+      "schoolid": "0011",
+      "schoolname": "Kingdom Heritage Model School, Abeokuta"
+    },
+    {
+      "schoolid": "0012",
+      "schoolname": "Kingdom Heritage Model School, Abuloma"
+    },
+    {
+      "schoolid": "0013",
+      "schoolname": "Kingdom Heritage Model School, Ekpoma"
+    },
+    {
+      "schoolid": "0014",
+      "schoolname": "Kingdom Heritage Model School, Goshen"
+    },
+    {
+      "schoolid": "0015",
+      "schoolname": "Kingdom Heritage Model School, Sapele Road, Benin"
+    },
+    {
+      "schoolid": "0016",
+      "schoolname": "Kingdom Heritage Model School, Nsukka"
+    },
+    {
+      "schoolid": "0017",
+      "schoolname": "Kingdom Heritage Model School, Goningora"
+    },
+    {
+      "schoolid": "0019",
+      "schoolname": "Kingdom Heritage Model School, Ibadan"
+    },
+    {
+      "schoolid": "0020",
+      "schoolname": "Kingdom Heritage Model School, Ado-Ekiti"
+    },
+    {
+      "schoolid": "0021",
+      "schoolname": "Kingdom Heritage Model School, Sapele"
+    },
+    {
+      "schoolid": "0022",
+      "schoolname": "Kingdom Heritage Model School, Owerri"
+    },
+    { "schoolid": "0023", "schoolname": "Kingdom Heritage Model School, Jos" },
+    {
+      "schoolid": "0024",
+      "schoolname": "Kingdom Heritage Model School, Sango"
+    },
+    {
+      "schoolid": "0025",
+      "schoolname": "Kingdom Heritage Model School, Bonny"
+    },
+    {
+      "schoolid": "0026",
+      "schoolname": "Kingdom Heritage Model School, Osogbo"
+    },
+    { "schoolid": "0027", "schoolname": "Kingdom Heritage Model School, Ogba" },
+    {
+      "schoolid": "0028",
+      "schoolname": "Kingdom Heritage Model School, Uromi"
+    },
+    {
+      "schoolid": "0029",
+      "schoolname": "Kingdom Heritage Model School, Badagry"
+    },
+    {
+      "schoolid": "0030",
+      "schoolname": "Kingdom Heritage Model School, Benin Saint Saviours"
+    },
+    {
+      "schoolid": "0031",
+      "schoolname": "Kingdom Heritage Model School, Ojodu"
+    },
+    {
+      "schoolid": "0032",
+      "schoolname": "Kingdom Heritage Model School, Akure"
+    },
+    {
+      "schoolid": "0033",
+      "schoolname": "Kingdom Heritage Model School, Kabba"
+    },
+    { "schoolid": "0034", "schoolname": "Kingdom Heritage Model School, Udu" },
+    { "schoolid": "0035", "schoolname": "Kingdom Heritage Model School, Jahi" },
+    {
+      "schoolid": "0036",
+      "schoolname": "Kingdom Heritage Model School, Warri"
+    },
+    {
+      "schoolid": "0037",
+      "schoolname": "Kingdom Heritage Model School, Minna"
+    },
+    { "schoolid": "0038", "schoolname": "Kingdom Heritage Model School, Uti" },
+    {
+      "schoolid": "0039",
+      "schoolname": "Kingdom Heritage Model School, Ile Ife"
+    },
+    {
+      "schoolid": "0040",
+      "schoolname": "Kingdom Heritage Model School, Gwagwalada"
+    },
+    {
+      "schoolid": "0041",
+      "schoolname": "Kingdom Heritage Model School, Ikorodu"
+    },
+    {
+      "schoolid": "0042",
+      "schoolname": "Kingdom Heritage Model School, Agbarho"
+    },
+    {
+      "schoolid": "0043",
+      "schoolname": "Kingdom Heritage Model School, Ikare"
+    },
+    {
+      "schoolid": "0044",
+      "schoolname": "Kingdom Heritage Model School, Auchi"
+    },
+    {
+      "schoolid": "0045",
+      "schoolname": "Kingdom Heritage Model School, Sango Ilorin"
+    },
+    { "schoolid": "0046", "schoolname": "Kingdom Heritage Model School, Oleh" },
+    {
+      "schoolid": "0047",
+      "schoolname": "Kingdom Heritage Model School, Ugbowo"
+    },
+    { "schoolid": "0048", "schoolname": "Kingdom Heritage Model School, Ondo" },
+    {
+      "schoolid": "0049",
+      "schoolname": "Kingdom Heritage Model School, Zaria"
+    },
+    {
+      "schoolid": "0050",
+      "schoolname": "Kingdom Heritage Model School, Otukpo"
+    },
+    {
+      "schoolid": "0051",
+      "schoolname": "Kingdom Heritage Model School, Port Harcourt"
+    },
+    {
+      "schoolid": "0052",
+      "schoolname": "Kingdom Heritage Model School, Ibusa"
+    },
+    {
+      "schoolid": "0053",
+      "schoolname": "Kingdom Heritage Model School, Gboko"
+    },
+    {
+      "schoolid": "0054",
+      "schoolname": "Kingdom Heritage Model School, Calabar South"
+    },
+    {
+      "schoolid": "0055",
+      "schoolname": "Kingdom Heritage Model School, Umuahia"
+    },
+    { "schoolid": "0056", "schoolname": "Kingdom Heritage Model School, Offa" },
+    {
+      "schoolid": "0057",
+      "schoolname": "Kingdom Heritage Model School, Apata Ibadan"
+    },
+    {
+      "schoolid": "0058",
+      "schoolname": "Kingdom Heritage Model School, Keffi"
+    },
+    {
+      "schoolid": "0059",
+      "schoolname": "Kingdom Heritage Model School, Agbor"
+    },
+    {
+      "schoolid": "0060",
+      "schoolname": "Kingdom Heritage Model School, Ajaokuta"
+    },
+    {
+      "schoolid": "0061",
+      "schoolname": "Kingdom Heritage Model School, Ankpa"
+    },
+    {
+      "schoolid": "0062",
+      "schoolname": "Kingdom Heritage Model School, Asaba"
+    },
+    { "schoolid": "0063", "schoolname": "Kingdom Heritage Model School, Awka" },
+    {
+      "schoolid": "0064",
+      "schoolname": "Kingdom Heritage Model School, Bacita"
+    },
+    { "schoolid": "0065", "schoolname": "Kingdom Heritage Model School, Bida" },
+    {
+      "schoolid": "0066",
+      "schoolname": "Kingdom Heritage Model School, Brass"
+    },
+    {
+      "schoolid": "0067",
+      "schoolname": "Kingdom Heritage Model School, Bukuru"
+    },
+    {
+      "schoolid": "0068",
+      "schoolname": "Kingdom Heritage Model School, Bwari"
+    },
+    {
+      "schoolid": "0069",
+      "schoolname": "Kingdom Heritage Model School, Calabar"
+    },
+    {
+      "schoolid": "0070",
+      "schoolname": "Kingdom Heritage Model School, Challenge Ibadan"
+    },
+    {
+      "schoolid": "0071",
+      "schoolname": "Kingdom Heritage Model School, Durumi"
+    },
+    { "schoolid": "0073", "schoolname": "Kingdom Heritage Model School, Eket" },
+    {
+      "schoolid": "0074",
+      "schoolname": "Kingdom Heritage Model School, Ekpan"
+    },
+    {
+      "schoolid": "0075",
+      "schoolname": "Kingdom Heritage Model School, Enugu"
+    },
+    {
+      "schoolid": "0076",
+      "schoolname": "Kingdom Heritage Model School, Gusau"
+    },
+    { "schoolid": "0078", "schoolname": "Kingdom Heritage Model School, Idah" },
+    {
+      "schoolid": "0079",
+      "schoolname": "Kingdom Heritage Model School, Ijebu Ode"
+    },
+    { "schoolid": "0080", "schoolname": "Kingdom Heritage Model School, Ikom" },
+    {
+      "schoolid": "0081",
+      "schoolname": "Kingdom Heritage Model School, Ikot Ekpene"
+    },
+    {
+      "schoolid": "0082",
+      "schoolname": "Kingdom Heritage Model School, Jalingo"
+    },
+    {
+      "schoolid": "0083",
+      "schoolname": "Kingdom Heritage Model School, Jikwoyi"
+    },
+    { "schoolid": "0085", "schoolname": "Kingdom Heritage Model School, Kuje" },
+    {
+      "schoolid": "0086",
+      "schoolname": "Kingdom Heritage Model School, Kwali"
+    },
+    {
+      "schoolid": "0087",
+      "schoolname": "Kingdom Heritage Model School, Lafia"
+    },
+    {
+      "schoolid": "0088",
+      "schoolname": "Landmark University Nursery and Primary School"
+    },
+    {
+      "schoolid": "0089",
+      "schoolname": "Kingdom Heritage Model School, Lokoja"
+    },
+    {
+      "schoolid": "0090",
+      "schoolname": "Kingdom Heritage Model School, Maiduguri"
+    },
+    {
+      "schoolid": "0091",
+      "schoolname": "Kingdom Heritage Model School, Mgbuoba"
+    },
+    {
+      "schoolid": "0092",
+      "schoolname": "Kingdom Heritage Model School, Ogoja"
+    },
+    {
+      "schoolid": "0093",
+      "schoolname": "Kingdom Heritage Model School, Ogwashi-Uku"
+    },
+    {
+      "schoolid": "0094",
+      "schoolname": "Kingdom Heritage Model School, Ohafia"
+    },
+    {
+      "schoolid": "0095",
+      "schoolname": "Kingdom Heritage Model School, Okene"
+    },
+    {
+      "schoolid": "0096",
+      "schoolname": "Kingdom Heritage Model School, Okitipupa"
+    },
+    {
+      "schoolid": "0097",
+      "schoolname": "Kingdom Heritage Model School, Onitsha"
+    },
+    {
+      "schoolid": "0098",
+      "schoolname": "Kingdom Heritage Model School, Oyigbo"
+    },
+    {
+      "schoolid": "0099",
+      "schoolname": "Kingdom Heritage Model School, Sagamu"
+    },
+    {
+      "schoolid": "0100",
+      "schoolname": "Kingdom Heritage Model School, Suleja"
+    },
+    {
+      "schoolid": "0101",
+      "schoolname": "Kingdom Heritage Model School, Ughelli"
+    },
+    { "schoolid": "0102", "schoolname": "Kingdom Heritage Model School, Uyo" },
+    {
+      "schoolid": "0103",
+      "schoolname": "Kingdom Heritage Model School, Yenegoa"
+    },
+    { "schoolid": "0104", "schoolname": "Kingdom Heritage Model School, Yola" },
+    {
+      "schoolid": "0105",
+      "schoolname": "Kingdom Heritage Model School, Lugbeamac"
+    },
+    {
+      "schoolid": "0106",
+      "schoolname": "Kingdom Heritage Model School, Sabo, Kaduna"
+    },
+    {
+      "schoolid": "0107",
+      "schoolname": "Kingdom Heritage Model School, Kwale"
+    },
+    {
+      "schoolid": "0108",
+      "schoolname": "Kingdom Heritage Model School, Ibara"
+    },
+    {
+      "schoolid": "0111",
+      "schoolname": "Kingdom Heritage Model School, Nyanya"
+    },
+    {
+      "schoolid": "0112",
+      "schoolname": "Kingdom Heritage Model School, Life Camp"
+    },
+    {
+      "schoolid": "0114",
+      "schoolname": "Kingdom Heritage Model School Madalla"
+    },
+    {
+      "schoolid": "0115",
+      "schoolname": "Kingdom Heritage Model School, Osubi"
+    },
+    {
+      "schoolid": "0117",
+      "schoolname": "Kingdom Heritage Model School, Oghara"
+    },
+    {
+      "schoolid": "0118",
+      "schoolname": "Kingdom Heritage Model School, New-Bussa"
+    },
+    {
+      "schoolid": "0119",
+      "schoolname": "Kingdom Heritage Model School, Katsina Road"
+    },
+    {
+      "schoolid": "0120",
+      "schoolname": "Kingdom Heritage Model School, Ozoro"
+    },
+    { "schoolid": "0121", "schoolname": "Kingdom Heritage Model School, Egbe" },
+    {
+      "schoolid": "0122",
+      "schoolname": "Kingdom Heritage Model School, Erin Ile"
+    },
+    {
+      "schoolid": "0123",
+      "schoolname": "Kingdom Heritage Model School, Mbiabong Etoi"
+    },
+    {
+      "schoolid": "0124",
+      "schoolname": "Kingdom Heritage Model School, Rumuogba"
+    },
+    {
+      "schoolid": "0125",
+      "schoolname": "Kingdom Heritage Model School, FHA Lugbe"
+    },
+    {
+      "schoolid": "0126",
+      "schoolname": "Kingdom Heritage Model School, Patani"
+    },
+    { "schoolid": "0127", "schoolname": "Kingdom Heritage Model School, Epe" },
+    {
+      "schoolid": "0128",
+      "schoolname": "Kingdom Heritage Model School, Irawo"
+    },
+    {
+      "schoolid": "0129",
+      "schoolname": "Kingdom Heritage Model School, Elelenwo"
+    },
+    { "schoolid": "0130", "schoolname": "Kingdom Heritage Model School, Kano" },
+    {
+      "schoolid": "0131",
+      "schoolname": "Kingdom Heritage Model School, Dei-Dei"
+    },
+    {
+      "schoolid": "0133",
+      "schoolname": "Kingdom Heritage Model School, Ogbomoso"
+    },
+    {
+      "schoolid": "0134",
+      "schoolname": "Kingdom Heritage Model School, Abakpa"
+    },
+    {
+      "schoolid": "0135",
+      "schoolname": "Kingdom Heritage Model School, Borikiri"
+    },
+    {
+      "schoolid": "0136",
+      "schoolname": "Kingdom Heritage Model School, Okrika"
+    },
+    { "schoolid": "0137", "schoolname": "Kingdom Heritage Model School, Onne" },
+    {
+      "schoolid": "0138",
+      "schoolname": "Kingdom Heritage Model School, Mgbidi"
+    },
+    {
+      "schoolid": "0139",
+      "schoolname": "Kingdom Heritage Model School, Akenpai"
+    },
+    {
+      "schoolid": "0140",
+      "schoolname": "Kingdom Heritage Model School, New Jerusalem"
+    },
+    {
+      "schoolid": "0141",
+      "schoolname": "Kingdom Heritage Model School, Isanlu"
+    },
+    {
+      "schoolid": "0142",
+      "schoolname": "Kingdom Heritage Model School, Iheorji"
+    },
+    {
+      "schoolid": "0143",
+      "schoolname": "Kingdom Heritage Model School, Rumumodomaya"
+    },
+    {
+      "schoolid": "0144",
+      "schoolname": "Kingdom Heritage Model School, Orozo"
+    },
+    {
+      "schoolid": "0145",
+      "schoolname": "Kingdom Heritage Model School, Anyigba"
+    },
+    { "schoolid": "0146", "schoolname": "Kingdom Heritage Model School, Egbe" },
+    { "schoolid": "0147", "schoolname": "Kingdom Heritage Model School, Bori" },
+    {
+      "schoolid": "0148",
+      "schoolname": "Kingdom Heritage Model School, Eligbam"
+    },
+    {
+      "schoolid": "0149",
+      "schoolname": "Kingdom Heritage Model School, Rumuodomaya"
+    },
+    {
+      "schoolid": "0151",
+      "schoolname": "Kingdom Heritage Model School, Abraka"
+    },
+    {
+      "schoolid": "0152",
+      "schoolname": "Kingdom Heritage Model School, Rumuodara"
+    },
+    {
+      "schoolid": "0153",
+      "schoolname": "Kingdom Heritage Model School, Okokomaiko"
+    },
+    { "schoolid": "0154", "schoolname": "Kingdom Heritage Model School, Ede" },
+    {
+      "schoolid": "0155",
+      "schoolname": "Kingdom Heritage Model School, Ahoada"
+    },
+    {
+      "schoolid": "",
+      "schoolname": "Kingdom Heritage Model School, Arochukwu"
+    },
+    {
+      "schoolid": "0158",
+      "schoolname": "Kingdom Heritage Model School, Amuwo"
+    },
+    { "schoolid": "0159", "schoolname": "Faith Academy, Canaanland" },
+    { "schoolid": "0160", "schoolname": "Faith Academy, Goshen" },
+    { "schoolid": "0161", "schoolname": "Faith Academy, Kubwa" },
+    { "schoolid": "0162", "schoolname": "Faith Academy, Kaduna" },
+    { "schoolid": "0163", "schoolname": "Faith Academy, Benin" },
+    { "schoolid": "0164", "schoolname": "Faith Academy, Gowon Estate" },
+    { "schoolid": "0165", "schoolname": "Faith Academy, Asaba" },
+    { "schoolid": "0166", "schoolname": "Faith Academy, Ilorin" },
+    { "schoolid": "0167", "schoolname": "Faith Academy, Port Harcourt" },
+    { "schoolid": "0168", "schoolname": "Faith Academy, Bonny" },
+    { "schoolid": "0169", "schoolname": "Faith Academy, Ikorodu" },
+    {
+      "schoolid": "0170",
+      "schoolname": "Covenant University Secondary School"
+    },
+    {
+      "schoolid": "0171",
+      "schoolname": "Landmark University Secondary School"
+    },
+    { "schoolid": "0172", "schoolname": "Faith Academy, Lugbe" },
+    {
+      "schoolid": "0173",
+      "schoolname": "Kingdom Heritage Model School, Ilaro"
+    },
+    { "schoolid": "0174", "schoolname": "Faith Academy, Lokoja" },
+    {
+      "schoolid": "0175",
+      "schoolname": "Kingdom Heritage Model School, Ukanafun"
+    },
+    { "schoolid": "0176", "schoolname": "Faith Academy, Eket" },
+    { "schoolid": "0177", "schoolname": "Faith Academy, Warri" },
+    { "schoolid": "0178", "schoolname": "Faith Academy, Ekpoma" },
+    {
+      "schoolid": "0179",
+      "schoolname": "Kingdom Heritage Model School, Nnewi"
+    },
+    { "schoolid": "0180", "schoolname": "Faith Academy, Suleja" },
+    { "schoolid": "0182", "schoolname": "Faith Academy, Jos" },
+    { "schoolid": "0183", "schoolname": "Faith Academy, Ogba" },
+    {
+      "schoolid": "0184",
+      "schoolname": "Kingdom Heritage Model School, Ilesa"
+    },
+    { "schoolid": "0185", "schoolname": "Faith Academy, Gowon Estate" },
+    {
+      "schoolid": "0186",
+      "schoolname": "Kingdom Heritage Model School, Gombe"
+    },
+    {
+      "schoolid": "0187",
+      "schoolname": "Kingdom Heritage Model School, Kpansia"
+    },
+    {
+      "schoolid": "0188",
+      "schoolname": "Kingdom Heritage Model School, Bomadi"
+    },
+    {
+      "schoolid": "0190",
+      "schoolname": "Kingdom Heritage Model School, Quarry Road, Abeokuta"
+    },
+    {
+      "schoolid": "0192",
+      "schoolname": "Kingdom Heritage Model School, Afikpo"
+    },
+    {
+      "schoolid": "0193",
+      "schoolname": "Kingdom Heritage Model School, Eleme"
+    },
+    { "schoolid": "0194", "schoolname": "Faith Academy, Warri" },
+    {
+      "schoolid": "0195",
+      "schoolname": "Kingdom Heritage Model School, Ahoada"
+    },
+    {
+      "schoolid": "0196",
+      "schoolname": "Kingdom Heritage Model School, Lokogoma"
+    },
+    {
+      "schoolid": "0197",
+      "schoolname": "Kingdom Heritage Model School, Eleyele"
+    },
+    {
+      "schoolid": "0198",
+      "schoolname": "Kingdom Heritage Model School, Kwanba"
+    },
+    { "schoolid": "0199", "schoolname": "Kingdom Heritage Model School, Ugep" },
+    {
+      "schoolid": "0200",
+      "schoolname": "Kingdom Heritage Model School, Abaji"
+    },
+    {
+      "schoolid": "0201",
+      "schoolname": "Kingdom Heritage Model School, Obantoko"
+    },
+    { "schoolid": "0203", "schoolname": "Kingdom Heritage Model School, Onna" },
+    { "schoolid": "0999", "schoolname": "Colab Academy Kaduna" }
+  ],
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC93d3cuY29sYWIuc2Nob29sbW8uYXBwIiwiaWF0IjoxNTc0ODkxMTI1LCJleHAiOjE1NzQ4OTQ3MjUsInNjaG9vbGlkIjoiMDE1OSIsInVzZXJpZCI6IjYiLCJ1c2VydHlwZSI6IlN1cGVyIEFkbWluIiwic2Nob29sbmFtZSI6ImNvbGFiIn0.Elx9hT6tpvzJ4GYc3jDM_uPIUDsSQrmKgpUn7eIdGj4"
+}
