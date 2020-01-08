@@ -23,21 +23,30 @@ let fullname,
     address;
 
 const handleCreateStaff = () => {
-  console.log("Hey!");
+  // handle form validation
+
 }
 
 </script>
 
+<style>
+#contactInformation {
+  background: white; 
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid #17212F;
+}
+</style>
+
 <section class="content-body">
   <form 
     id="contactInformation" 
-    style="background: white; padding: 10px 25px;" 
     on:submit|preventDefault={handleCreateStaff}>
             
     <div class="d-flex align-items-center justify-content-between mg-b-10">
       <h6 class="mg-b-0">Create New Staff</h6>
       <div class="d-flex">
-        <button type="submit" class="btn btn-sec">Create New Staff</button>
+        <button type="submit" class="btn btn-sec">Add New Staff</button>
       </div>
     </div>
 
@@ -196,7 +205,12 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Designation
         </label>
-        <select name="designation" bind:value={designation} class="form-control" id="designation" required>
+        <select 
+          name="designation" 
+          bind:value={designation} 
+          class="form-control" 
+          id="designation" 
+          required>
           <option selected>-- select --</option>
           <option value="HEAD TEACHER">HEAD TEACHER</option>
           <option value="SECRETARY">SECRETARY</option>
@@ -397,25 +411,6 @@ const handleCreateStaff = () => {
         >
       </div>
       <!-- col -->
-      <div class="col-sm mg-t-20 mg-sm-t-0">
-        <label
-          for="disciplinary_cases"
-          class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
-          tx-sans mg-b-10">
-          Disciplinary Cases
-        </label>
-        <input 
-          type="text" 
-          bind:value={disciplinary_cases}
-          name="disciplinary_cases" 
-          class="form-control" 
-          id="disciplinary_cases"
-        >
-      </div>
-       <!-- col -->
-    </div>
-    <!-- row -->
-    <div class="row mt-2">
       <div class="col-md">
         <label
           for="address"
@@ -432,7 +427,7 @@ const handleCreateStaff = () => {
           required
         ></textarea>
       </div>
-       <!-- col -->
+      <!-- col -->
     </div>
      <!-- row -->   
   </form>

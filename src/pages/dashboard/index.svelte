@@ -40,7 +40,7 @@
         <a href="/dashboard/staff" class="btn btn-sm pd-x-15 btn-white btn-uppercase">
           <i data-feather="mail" class="wd-10 mg-r-5"></i> All Staff
         </a>
-        <a href="/dashboard/new-staff" class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5">
+        <a href="/dashboard/new-staff" class="btn btn-sm pd-x-15 btn-sec btn-uppercase mg-l-5">
           <i data-feather="file" class="wd-10 mg-r-5"></i> Create New Staff
         </a>
       </div>
