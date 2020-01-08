@@ -1,16 +1,43 @@
 <script>
 
 let staffData = {};
+let fullname,
+    phone,
+    email,
+    sex,
+    marital_status,
+    dateofentry,
+    birthdate,
+    qualification,
+    designation,
+    discipline,
+    staff_type,
+    years_of_experience,
+    employment_type,
+    contract_type,
+    gross_salary,
+    res_allowance,
+    church_membership,
+    wofbi_level,
+    disciplinary_cases,
+    address;
+
+const handleCreateStaff = () => {
+  console.log("Hey!");
+}
 
 </script>
 
-
 <section class="content-body">
-  <div id="contactInformation" class="content" style="background: white;">
+  <form 
+    id="contactInformation" 
+    style="background: white; padding: 10px 25px;" 
+    on:submit|preventDefault={handleCreateStaff}>
             
-    <div class="d-flex align-items-center justify-content-between mg-b-25">
+    <div class="d-flex align-items-center justify-content-between mg-b-10">
       <h6 class="mg-b-0">Create New Staff</h6>
       <div class="d-flex">
+        <button type="submit" class="btn btn-sec">Create New Staff</button>
       </div>
     </div>
 
@@ -22,7 +49,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Full Name
         </label>
-        <input type="text" name="fullname" class="form-control" id="fullname">
+        <input 
+          type="text" 
+          name="fullname" 
+          bind:value={fullname} 
+          class="form-control form-control-sm" 
+          id="fullname" 
+          required>
       </div>
       <!-- col -->
       <div class="col-6 col-sm-4">
@@ -31,22 +64,34 @@ let staffData = {};
           tx-sans mg-b-10">
           Phone
         </label>
-        <input type="tel" name="phone" class="form-control" id="phone">
+        <input 
+          type="tel" 
+          bind:value={phone}
+          name="phone" 
+          class="form-control" 
+          id="phone" 
+          required>
       </div>
-
+       <!-- col -->
       <div class="col-6 col-sm-4">
         <label
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Email
         </label>
-        <input type="email" name="email" class="form-control" id="email">
+        <input 
+          type="email" 
+          name="email" 
+          bind:value={email} 
+          class="form-control" 
+          id="email" 
+          required>
       </div>
       <!-- col -->
     </div>
     <!-- row -->
 
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="col-4 col-sm">
         <label
           for="sex"
@@ -54,13 +99,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Sex
         </label>
-        <select name="sex" class="form-control" id="fullname">
-          <option value="">-- select --</option>
+        <select name="sex" class="form-control" bind:value={sex} id="sex" required>
+          <option selected>-- select --</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
       </div>
-
+       <!-- col -->
       <div class="col-4 col-sm">
         <label
           for="marital_status"
@@ -68,39 +113,55 @@ let staffData = {};
           tx-sans mg-b-10">
           Marital Status
         </label>
-        <select name="marital_status" class="form-control" id="marital_status">
-          <option value="">-- select --</option>
-          <option value="single">Single</option>
-          <option value="married">Married</option>
+        <select 
+          name="marital_status" 
+          bind:value={marital_status} 
+          class="form-control" 
+          id="marital_status">
+          <option selected>-- select --</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Divorced">Divorced</option>
         </select>
       </div>
       <!-- col -->
       <div class="col-4 col-sm">
         <label
-          for="doe"
+          for="dateofentry"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Date Of Entry
         </label>
-        <input type="date" name="doe" class="form-control" id="doe">
+        <input 
+          type="date" 
+          name="dateofentry" 
+          bind:value={dateofentry} 
+          class="form-control" 
+          id="dateofentry" 
+          required>
       </div>
       <!-- col -->
-
       <div class="col-sm mg-t-20 mg-sm-t-0">
         <label
-          for="dob"
+          for="birthdate"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Birth Date
         </label>
-        <input type="date" name="dob" class="form-control" id="dob">
+        <input 
+          type="date" 
+          name="birthdate" 
+          bind:value={birthdate} 
+          class="form-control" 
+          id="birthdate" 
+          required>
       </div>
       <!-- col -->
       
     </div>
     <!-- row -->
 
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="col-sm mg-t-20 mg-sm-t-0">
         <label
           for="qualification"
@@ -108,8 +169,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Qualification
         </label>
-        <select name="qualification" class="form-control" id="qualification">
-          <option value="">-- select --</option>
+        <select 
+          name="qualification" 
+          bind:value={qualification} 
+          class="form-control" 
+          id="qualification" 
+          required>
+          <option selected>-- select --</option>
           <option value="SSCE">SSCE</option>
           <option value="NCE">NCE</option>
           <option value="ND">ND</option>
@@ -130,8 +196,8 @@ let staffData = {};
           tx-sans mg-b-10">
           Designation
         </label>
-        <select name="designation" class="form-control" id="designation">
-          <option value="">-- select --</option>
+        <select name="designation" bind:value={designation} class="form-control" id="designation" required>
+          <option selected>-- select --</option>
           <option value="HEAD TEACHER">HEAD TEACHER</option>
           <option value="SECRETARY">SECRETARY</option>
           <option value="ASSISTANT HEAD TEACHER">ASSISTANT HEAD TEACHER</option>
@@ -166,21 +232,32 @@ let staffData = {};
           tx-sans mg-b-10">
           Discipline
         </label>
-        <input type="text" name="discipline" class="form-control" id="discipline">
+        <input 
+          type="text" 
+          name="discipline" 
+          bind:value={designation} 
+          class="form-control" 
+          id="discipline" 
+          required>
       </div>
       <!-- col -->
     </div>
     <!-- row -->
 
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="col-sm mg-t-20 mg-sm-t-0">
         <label
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Staff type
         </label>
-        <select name="qualification" class="form-control" id="qualification">
-          <option value="">-- select --</option>
+        <select 
+          name="qualification" 
+          bind:value={qualification} 
+          class="form-control" 
+          id="qualification" 
+          required>
+          <option selected>-- select --</option>
           <option value="Teaching">Teaching</option>
           <option value="Non-Teaching">Non-Teaching</option>
         </select>
@@ -193,7 +270,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Years Of Experience
         </label>
-        <input type="number" name="years_of_experience" class="form-control" id="years_of_experience">
+        <input 
+          type="number"
+          bind:value={years_of_experience}
+          name="years_of_experience" 
+          class="form-control" 
+          id="years_of_experience" 
+          required>
       </div>
       <!-- col -->
       <div class="col-4 col-sm">
@@ -203,8 +286,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Employment Type
         </label>
-        <select name="employment_type" class="form-control" id="employment_type">
-          <option value="">-- select --</option>
+        <select 
+          name="employment_type" 
+          bind:value={employment_type} 
+          class="form-control" 
+          id="employment_type" 
+          required>
+          <option selected>-- select --</option>
           <option value="Tenured">Tenured</option>
           <option value="Non-Tenured">Non-Tenured</option>
         </select>
@@ -216,8 +304,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Contract Type
         </label>
-        <select name="contract_type" class="form-control" id="contract_type">
-          <option value="">-- select --</option>
+        <select 
+          name="contract_type" 
+          bind:value={contract_type}
+          class="form-control" 
+          id="contract_type" 
+          required>
+          <option selected>-- select --</option>
           <option value="Permanent">Permanent</option>
           <option value="Fixed">Fixed</option>
         </select>
@@ -226,7 +319,7 @@ let staffData = {};
     </div>
     <!-- row -->
 
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="col-3 col-sm">
         <label
           for="salary"
@@ -234,7 +327,13 @@ let staffData = {};
           tx-sans mg-b-10">
           Gross Salary
         </label>
-        <input type="text" name="salary" class="form-control" id="salary">
+        <input 
+          type="text" 
+          bind:value={gross_salary} 
+          name="salary" 
+          class="form-control" 
+          id="salary" 
+          required>
       </div>
       <!-- col -->
       <div class="col-5 col-sm">
@@ -244,53 +343,79 @@ let staffData = {};
           tx-sans mg-b-10">
           Responsibility Allowances
         </label>
-        <input type="text" name="res_allowance" class="form-control" id="res_allowance">
+        <input 
+          type="number" 
+          bind:value={res_allowance}
+          name="res_allowance" 
+          class="form-control" 
+          id="res_allowance" 
+          required>
       </div>
       <!-- col -->
       <div class="col-6 col-sm">
         <label
+          for="church_membership"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Church Membership
         </label>
-        <input type="text" name="cm" class="form-control" id="cm">
+        <input 
+          type="text" 
+          bind:value={church_membership}
+          name="church_membership" 
+          class="form-control" 
+          id="church_membership" 
+        >
       </div>
       <!-- col -->
     </div>
     <!-- row -->
 
-    <div class="row mt-3">
+    <div class="row mt-2">
       <!-- <div class="col-6 col-sm">
         <label
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
-          Vert Ver Status
+          Cert Ver Status
         </label>
         <p class="mg-b-0">{staffData.cert_ver_status}</p>
       </div> -->
       <!-- col -->
       <div class="col-6 col-sm">
         <label
+          for="wofbi_level"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Wofbi Level
         </label>
-        <input type="text" name="wl" class="form-control" id="wl">
+        <input 
+          type="text" 
+          bind:value={wofbi_level}
+          name="wofbi_level" 
+          class="form-control" 
+          id="wofbi_level" 
+        >
       </div>
       <!-- col -->
       <div class="col-sm mg-t-20 mg-sm-t-0">
         <label
+          for="disciplinary_cases"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
           tx-sans mg-b-10">
           Disciplinary Cases
         </label>
-        <input type="text" name="dc" class="form-control" id="dc">
+        <input 
+          type="text" 
+          bind:value={disciplinary_cases}
+          name="disciplinary_cases" 
+          class="form-control" 
+          id="disciplinary_cases"
+        >
       </div>
-      
+       <!-- col -->
     </div>
     <!-- row -->
-    <div class="row mt-3 mb-5">
-      <!-- col -->
+    <div class="row mt-2">
       <div class="col-md">
         <label
           for="address"
@@ -298,10 +423,17 @@ let staffData = {};
           tx-sans mg-b-10">
           Address
         </label>
-        <textarea name="address" class="form-control" id="address"rows="6"></textarea>
+        <textarea 
+          name="address" 
+          bind:value={address} 
+          class="form-control" 
+          id="address" 
+          rows="3" 
+          required
+        ></textarea>
       </div>
+       <!-- col -->
     </div>
-
-    <button type="submit" class="btn btn-block btn-bg btn-primary">Create New Staff</button>   
-  </div>
+     <!-- row -->   
+  </form>
 </section>
