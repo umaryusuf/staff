@@ -161,6 +161,19 @@
     // make api request to transfer staff
   }
 
+
+  function openQueriesModal() {
+
+  }
+
+  function openLeaveModal() {
+
+  }
+
+  function openTransferModal() {
+
+  }
+
 </script>
 
 <style>
@@ -175,14 +188,6 @@
     min-height: 100%;
     max-width: 100%;
     max-height: 100%;
-  }
-
-  .btn-sec {
-    background-color: #1B2739;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 10px;
   }
 
   .contact-content-body {
@@ -260,6 +265,7 @@
         <div class="d-flex align-items-center justify-content-between mg-b-25">
           <h6 class="mg-b-0">Staff Details</h6>
           <div class="d-flex">
+            
           </div>
         </div>
 
@@ -511,6 +517,12 @@
       </div>
       {:else if (activeTab === "transfer")}
       <div id="tranferTab" class="tab-pane {activeTab === "transfer" ? "show active" : ""} pd-20 pd-xl-25">
+        <div class="d-flex align-items-center justify-content-between mg-b-25">
+          <h4 class="mb-4">Staff Tranfer(s)</h4>
+          <div class="d-flex">
+            <button class="btn btn-sm btn-sec" on:click={openTransferModal}>Transfer Staff</button>
+          </div>
+        </div>
         <div class="row">
           <div class="col col-sm-6">
             <form on:submit|preventDefault={handleTransfer}>
@@ -527,13 +539,19 @@
                 <label for="to">Date: </label>
                 <input class="form-control" type="date" bind:value={date} id="to">
               </div>
-              <button type="submit" class="btn btn-sec">Transfer</button>
+              <button type="submit" class="btn btn-sm btn-sec">Transfer</button>
             </form>
           </div>
         </div>
       </div>
       {:else if (activeTab === "leaves")}
       <div id="tranferTab" class="tab-pane {activeTab === "leaves" ? "show active" : ""} pd-20 pd-xl-25">
+        <div class="d-flex align-items-center justify-content-between mg-b-25">
+          <h4 class="mb-4">Staff Leave(s)</h4>
+          <div class="d-flex">
+            <button class="btn btn-sm btn-sec" on:click={openLeaveModal}>Request Leaves</button>
+          </div>
+        </div>
         <div class="row">
           <div class="col">
             <h4 class="mb-4">Staff Leave(s)</h4>
@@ -570,9 +588,14 @@
       </div>
       {:else if (activeTab === "queries")}
       <div id="tranferTab" class="tab-pane {activeTab === "queries" ? "show active" : ""} pd-20 pd-xl-25">
+        <div class="d-flex align-items-center justify-content-between mg-b-25">
+          <h4 class="mb-4">Staff Querie(s)</h4>
+          <div class="d-flex">
+            <button class="btn btn-sm btn-sec" on:click={openQueriesModal}>Add Query</button>
+          </div>
+        </div>
         <div class="row">
-          <div class="col ">
-            <h4 class="mb-4">Staff Querie(s)</h4>
+          <div class="col">
             {#if queriesData.length > 0}
             <table class="table">
               <thead>

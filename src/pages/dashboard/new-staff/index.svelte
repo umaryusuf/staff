@@ -284,13 +284,18 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Years Of Experience
         </label>
-        <input 
+        <div class="input-group">
+          <input 
           type="number"
           bind:value={years_of_experience}
           name="years_of_experience" 
           class="form-control" 
           id="years_of_experience" 
           required>
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">years</span>
+          </div>
+        </div>
       </div>
       <!-- col -->
       <div class="col-4 col-sm">
@@ -341,13 +346,19 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Gross Salary
         </label>
-        <input 
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="gross_salary">₦</span>
+          </div>
+          <input 
           type="text" 
           bind:value={gross_salary} 
           name="salary" 
           class="form-control" 
           id="salary" 
+          aria-labelledby="gross_salary"
           required>
+        </div>
       </div>
       <!-- col -->
       <div class="col-5 col-sm">
@@ -357,13 +368,19 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Responsibility Allowances
         </label>
-        <input 
-          type="number" 
-          bind:value={res_allowance}
-          name="res_allowance" 
-          class="form-control" 
-          id="res_allowance" 
-          required>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="res_allowance">₦</span>
+          </div>
+          <input 
+            type="number" 
+            bind:value={res_allowance}
+            name="res_allowance" 
+            class="form-control" 
+            id="res_allowance"
+            aria-labelledby="res_allowance" 
+            required>
+        </div>
       </div>
       <!-- col -->
       <div class="col-6 col-sm">
@@ -373,13 +390,24 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Church Membership
         </label>
-        <input 
+        <!-- <input 
           type="text" 
           bind:value={church_membership}
           name="church_membership" 
           class="form-control" 
           id="church_membership" 
-        >
+        > -->
+        <select 
+          name="church_membership" 
+          bind:value={church_membership}
+          class="form-control" 
+          id="church_membership" 
+          required>
+          <option selected>-- select --</option>
+          <option value="LFC">LFC</option>
+          <option value="Pentecostal">Pentecostal</option>
+          <option value="Others">Others</option>
+        </select>
       </div>
       <!-- col -->
     </div>
