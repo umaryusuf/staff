@@ -1,7 +1,7 @@
 <script>
   import Navleft from './_navleft.svelte';
   import { notifier } from '@beyonk/svelte-notifications';
-  import { URL, handleError } from '../../../constants.js';
+  import { URL, handleError } from '../../../helpers.js';
   import { singleStaff, user } from '../../../stores.js';
 
   let userData = {};

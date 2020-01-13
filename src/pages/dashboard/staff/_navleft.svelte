@@ -1,7 +1,7 @@
 <script>
   import { onMount, createEventDispatcher } from 'svelte';
   import { notifier } from '@beyonk/svelte-notifications';
-  import { URL, handleError } from '../../../constants.js';
+  import { URL, handleError } from '../../../helpers.js';
   import { staffStore, user } from '../../../stores.js'; 
 
   const dispatch = createEventDispatcher();
@@ -43,6 +43,7 @@
         // set staff to empty array
         //staffStore.set([]);
         staff = [];
+        staff = [];
         handleError(data.message);
       }
       localStorage.setItem('auth-token', data.token);
@@ -55,7 +56,7 @@
   function handleSearch() {
 
     let data = copy.filter(el => {
-      return el.schoolname.toLowerCase().indexOf(search.toLowerCase()) > -1;
+      return el.fullname.toLowerCase().indexOf(search.toLowerCase()) > -1;
     });
 
     staff = [...data];

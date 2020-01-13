@@ -1,5 +1,5 @@
 <script>
-  import { URL, handleError, checkAuth } from '../constants.js';
+  import { URL, handleError, checkAuth } from '../helpers.js';
   import { NotificationDisplay, notifier } from '@beyonk/svelte-notifications';
   import { user } from '../stores.js';
 

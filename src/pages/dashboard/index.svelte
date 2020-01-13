@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { notifier } from '@beyonk/svelte-notifications';
-  import { URL, handleError } from '../../constants';
+  import { URL, handleError } from '../../helpers';
 
   let dashboard = null;
 

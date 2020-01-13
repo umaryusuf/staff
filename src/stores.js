@@ -27,3 +27,4 @@ export const notificationsStore = createWritableStore('notifications', []);
 export const singleStaff = writable({});
 export const queries = writable([]);
 export const leaves = writable([]);
+export const transferStores = writable([]);

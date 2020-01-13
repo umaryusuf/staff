@@ -1,5 +1,5 @@
 <script>
-  import { logout } from "../../constants";
+  import { logout } from "../../helpers";
   import { user } from '../../stores.js';
 
   let userData = {};

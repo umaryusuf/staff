@@ -1,18 +1,22 @@
 <script>
   import { onMount } from "svelte";
-  import { user, singleStaff, schoolsStore, queries, leaves } from "../../../../stores.js";
-  import { URL, handleError } from "../../../../constants.js";
+  import { user, singleStaff, schoolsStore, queries, leaves, transferStores } from "../../../../stores.js";
+  import { URL, handleError } from "../../../../helpers.js";
   import { notifier } from "@beyonk/svelte-notifications";
+  import Queries from './_queries.svelte';
+  import Transfer from './_transfers.svelte';
+  import Leaves from './_leaves.svelte';
+  import QueriesModal from './_queriesModal.svelte';
+  import LeavesModal from './_leavesModal.svelte';
+  import TransferModal from './_transferModal.svelte';
+
   export let route;
 
-  let staff = [];
-  let schools = [];
-  let staffData = {};
-  let queriesData = [];
-  let leavesData = [];
+  let staff, schools, queriesData, leavesData, transferData = [];
   let selected, date;
   let activeTab = "default";
-  let userData = {};
+  let userData, staffData = {};
+  let modalActive;
 
   user.useLocalStorage();
   
@@ -22,6 +26,7 @@
 
   const { id } = route.params;
   const school_id = userData.school_info.id;
+  const school_name = userData.school_info.name;
 
   queries.subscribe(items => {
     queriesData = items;
@@ -37,6 +42,10 @@
 
   schoolsStore.subscribe(item => {
     schools = [...item];
+  });
+
+  transferStores.subscribe(item => {
+    transferData = item;
   });
 
   onMount(() => { 
@@ -67,7 +76,6 @@
     .then(res => res.json())
     .then(data => {
       if(data.status === 'success') {
-        console.log(data)
         schoolsStore.set(data.data);
         notifier.success(data.message);
       } else {
@@ -109,12 +117,31 @@
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       if(data.status === "success") {
         queries.set(data.data);
         notifier.success(data.message);
       } else {
         queries.set([]);
+        handleError(data.message);
+      }
+      localStorage.setItem('auth-token', data.token)
+    })
+    .catch(error => console.log(error));
+  }
+
+  function getTranfers(school_id, staff_id) {
+    fetch(`${URL}/transfer/${school_id}/${staff_id}`, {
+      headers: {
+        authorization: localStorage.getItem('auth-token'),
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.status === "success") {
+        transferStores.set(data.data);
+        notifier.success(data.message);
+      } else {
+        transferStores.set([]);
         handleError(data.message);
       }
       localStorage.setItem('auth-token', data.token)
@@ -135,44 +162,26 @@
       case "leaves":
         getLeaves(school_id, id);
         break;
+      
+       case "transfer":
+        getTranfers(school_id, id);
+        break;
     
       default:
         break;
     }
-    console.log(tabId);
   }
 
-  function handleTransfer(e) {
-    
-    if(!selected) {
-      notifier.danger("school not selected");
-      return;
-    }
-
-    const url = `${URL}/transfer/${route.params.schoolid}`;
-    const data = {
-      from: route.params.schoolid, 
-      to: selected, 
-      staff_id: route.params.id
-    };
-
-    console.log(data);
-
-    // make api request to transfer staff
+  function openModal(e) {
+    console.log(e.detail)
+    modalActive = e.detail;
   }
 
-
-  function openQueriesModal() {
-
+  function closeModal(e) {
+    modalActive = undefined;
   }
 
-  function openLeaveModal() {
-
-  }
-
-  function openTransferModal() {
-
-  }
+  // console.log(transferData);
 
 </script>
 
@@ -194,8 +203,6 @@
     background: #fff;
   }
 </style>
-
-
 
 <div class="contact-content">
 
@@ -232,7 +239,7 @@
         data-tab-id="transfer" 
         data-toggle="tab"
       >
-        Transfer Staff
+        Transfer
       </a>
     </nav>
     <a href="#!" id="contactOptions" class="text-secondary mg-l-auto d-xl-none">
@@ -516,111 +523,23 @@
         <!-- row -->
       </div>
       {:else if (activeTab === "transfer")}
-      <div id="tranferTab" class="tab-pane {activeTab === "transfer" ? "show active" : ""} pd-20 pd-xl-25">
-        <div class="d-flex align-items-center justify-content-between mg-b-25">
-          <h4 class="mb-4">Staff Tranfer(s)</h4>
-          <div class="d-flex">
-            <button class="btn btn-sm btn-sec" on:click={openTransferModal}>Transfer Staff</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-sm-6">
-            <form on:submit|preventDefault={handleTransfer}>
-              <div class="form-group">
-                <label for="to">Transfer To: </label>
-                <select class="form-control" bind:value={selected} id="to">
-                  <option value="">-- select ---</option>
-                  {#each schools as school}
-                  <option value="{school.schoolid}">{school.schoolname}</option>
-                  {/each}
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="to">Date: </label>
-                <input class="form-control" type="date" bind:value={date} id="to">
-              </div>
-              <button type="submit" class="btn btn-sm btn-sec">Transfer</button>
-            </form>
-          </div>
-        </div>
-      </div>
+        <Transfer 
+          transferData={transferData} 
+          activeTab={activeTab} 
+          on:modal-open={openModal} 
+        />
       {:else if (activeTab === "leaves")}
-      <div id="tranferTab" class="tab-pane {activeTab === "leaves" ? "show active" : ""} pd-20 pd-xl-25">
-        <div class="d-flex align-items-center justify-content-between mg-b-25">
-          <h4 class="mb-4">Staff Leave(s)</h4>
-          <div class="d-flex">
-            <button class="btn btn-sm btn-sec" on:click={openLeaveModal}>Request Leaves</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h4 class="mb-4">Staff Leave(s)</h4>
-            {#if leavesData.length > 0}
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Start Date</th>
-                  <th scope="col">End Date</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Applied On</th>
-                </tr>
-              </thead>
-              <tbody>
-                {#each leavesData as l, i}
-                <tr>
-                  <th scope="row">{i + 1}</th>
-                  <td>{l.description}</td>
-                  <td>{l.start_date}</td>
-                  <td>{l.end_date}</td>
-                  <td>{l.status}</td>
-                  <td>{l.created_at}</td>
-                </tr>
-                {/each}
-              </tbody>
-            </table>
-            {:else}
-            <h4>Staff have no leaves</h4>
-            {/if}
-          </div>
-        </div>
-      </div>
+        <Leaves 
+          activeTab={activeTab} 
+          leavesData={leavesData} 
+          on:modal-open={openModal} 
+        /> 
       {:else if (activeTab === "queries")}
-      <div id="tranferTab" class="tab-pane {activeTab === "queries" ? "show active" : ""} pd-20 pd-xl-25">
-        <div class="d-flex align-items-center justify-content-between mg-b-25">
-          <h4 class="mb-4">Staff Querie(s)</h4>
-          <div class="d-flex">
-            <button class="btn btn-sm btn-sec" on:click={openQueriesModal}>Add Query</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            {#if queriesData.length > 0}
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {#each queriesData as q, i}
-                <tr>
-                  <th scope="row">{i + 1}</th>
-                  <td>{q.description}</td>
-                  <td>{q.date}</td>
-                </tr>
-                {/each}
-              </tbody>
-            </table>
-            {:else}
-            <h4>Staff have no queries</h4>
-            {/if}
-          </div>
-        </div>
-      </div>
+        <Queries 
+          activeTab={activeTab} 
+          queriesData={queriesData} 
+          on:modal-open={openModal} 
+        />
       {/if}
       <!-- tab-pane -->
     </div>
@@ -635,3 +554,30 @@
   <!-- contact-content-body -->
   {/if}
 </div>
+
+{#if modalActive === 'query'}
+<QueriesModal 
+  modalActive={modalActive} 
+  on:close-modal={closeModal} 
+/>
+{:else if (modalActive === 'leave') }
+<LeavesModal 
+  modalActive={modalActive} 
+  on:close-modal={closeModal} 
+/>
+{:else if (modalActive === 'transfer')}
+<TransferModal 
+  schools={schools} 
+  modalActive={modalActive} 
+  staffId={id}
+  schoolId={school_id}
+  schoolName={school_name}
+  on:close-modal={closeModal} 
+/>
+{/if}
+
+
+<div class="backdrop"></div>
+{#if modalActive !== undefined }
+<div class="modal-backdrop fade show"></div>
+{/if}
