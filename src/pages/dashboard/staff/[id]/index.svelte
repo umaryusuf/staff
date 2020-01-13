@@ -559,11 +559,15 @@
 <QueriesModal 
   modalActive={modalActive} 
   on:close-modal={closeModal} 
+  staffId={id}
+  schoolId={school_id}
 />
 {:else if (modalActive === 'leave') }
 <LeavesModal 
   modalActive={modalActive} 
   on:close-modal={closeModal} 
+  staffId={id}
+  schoolId={school_id}
 />
 {:else if (modalActive === 'transfer')}
 <TransferModal 

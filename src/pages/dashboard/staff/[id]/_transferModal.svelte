@@ -34,7 +34,6 @@
     })
     .then(res => res.json())
     .then(resData => {
-      console.log('transfered data', resData.data);
       // show success message
       notifier.success(resData.message);
       // update the store
@@ -45,7 +44,6 @@
       dispatch('close-modal', 'transfer');
     })
     .catch(error => console.log(error));
-    console.log(url, data);
   }
 
 </script>

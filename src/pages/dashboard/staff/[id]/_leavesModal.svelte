@@ -1,9 +1,52 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { notifier } from "@beyonk/svelte-notifications";
+  import { URL, handleError } from '../../../../helpers';
+  import { leaves } from '../../../../stores';
+
+  export let modalActive, schoolId, staffId;
 
   const dispatch = createEventDispatcher();
 
-  export let modalActive;
+  let description, start_date, end_date;
+
+  function handleLeave() {
+
+    if(!description || !start_date || !end_date) {
+      notifier.warning("description, start & end date required");
+      return;
+    }
+
+    const url = `${URL}/leave/${schoolId}`;
+
+    const data = {
+      description: description,
+      staff_id: staffId,
+      start_date: start_date,
+      end_date: end_date
+    };
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        authorization: localStorage.getItem('auth-token')
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(resData => {
+      // show success message
+      notifier.success(resData.message);
+      // update the store
+      leaves.update(item => {
+        return [resData.data, ...item]
+      });
+      // close the modal
+      dispatch('close-modal', 'leave');
+    })
+    .catch(error => console.log(error));
+
+  }
 
 </script>
 
@@ -28,18 +71,25 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form on:submit|preventDefault={handleLeave}>
           <div class="form-group">
-            <label for="time">Time</label>
-            <select id="time" class="form-control">
-              <option value="">-- select time --</option>
-              <option value="1 day">1 Day</option>
-              <option value="2 days">2 Days</option>
-              <option value="3 days">3 Days</option>
-              <option value="1 week">1 Week</option>
-            </select>
+            <label for="description">Description: </label>
+            <textarea 
+              class="form-control" 
+              name="description" 
+              bind:value={description} 
+              id="description" 
+              rows="3"></textarea>
           </div>
-          <button class="btn btn-sec btn-block">Grant Edit Access</button>
+          <div class="form-group">
+            <label for="start_date">Start Date: </label>
+            <input class="form-control" type="date" bind:value={start_date} id="start_date">
+          </div>
+          <div class="form-group">
+            <label for="end_date">End Date: </label>
+            <input class="form-control" type="date" bind:value={end_date} id="end_date">
+          </div>
+          <button class="btn btn-sm btn-sec btn-block">Submit</button>
         </form>
       </div>
     </div>

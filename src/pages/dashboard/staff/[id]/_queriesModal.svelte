@@ -1,9 +1,47 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { notifier } from "@beyonk/svelte-notifications";
+  import { URL, handleError } from '../../../../helpers';
+  import { queries } from '../../../../stores';
 
   const dispatch = createEventDispatcher();
 
-  export let modalActive;
+  export let modalActive, description, schoolId, staffId;
+
+  function handleQuery() {
+    if(!description) {
+      notifier.warning("description is required");
+      return;
+    }
+
+    const url = `${URL}/staff/query/${schoolId}`;
+
+    const data = {
+      description: description,
+      staff_id: staffId,
+    };
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        authorization: localStorage.getItem('auth-token')
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(resData => {
+      // show success message
+      notifier.success(resData.message);
+      // update the store
+      queries.update(item => {
+        return [...resData.data, ...item]
+      });
+      // close the modal
+      dispatch('close-modal', 'queries');
+    })
+    .catch(error => console.log(error));
+
+  }
 
 </script>
 
@@ -22,18 +60,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form on:submit|preventDefault={handleQuery}>
           <div class="form-group">
-            <label for="time">Time</label>
-            <select id="time" class="form-control">
-              <option value="">-- select time --</option>
-              <option value="1 day">1 Day</option>
-              <option value="2 days">2 Days</option>
-              <option value="3 days">3 Days</option>
-              <option value="1 week">1 Week</option>
-            </select>
+            <label for="description">Description: </label>
+            <textarea 
+              class="form-control" 
+              name="description" 
+              bind:value={description} 
+              id="description" 
+              rows="3"></textarea>
           </div>
-          <button class="btn btn-sec btn-block">Grant Edit Access</button>
+          <button class="btn btn-sec btn-block">Submit</button>
         </form>
       </div>
     </div>
