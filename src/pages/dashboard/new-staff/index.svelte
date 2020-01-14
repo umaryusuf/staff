@@ -1,4 +1,15 @@
 <script>
+import { URL } from '../../../helpers';
+import { staffStore, user } from '../../../stores';
+import { notifier } from '@beyonk/svelte-notifications';
+
+let userData = {};
+
+user.useLocalStorage();
+
+user.subscribe(data => {
+  userData = data;
+});
 
 let staffData = {};
 let fullname,
@@ -15,15 +26,48 @@ let fullname,
     years_of_experience,
     employment_type,
     contract_type,
+    contract_duration,
     gross_salary,
     res_allowance,
     church_membership,
     wofbi_level,
     disciplinary_cases,
+    cert_ver_status,
     address;
 
 const handleCreateStaff = () => {
-  // handle form validation
+  // handle form validation here
+  // if(!name || phone || !email) {
+  //   notifier.warning("name, phone & date required");
+  //   return;
+  // }
+
+  const url = `${URL}/staff/${userData.school_info.id}`;
+
+  const data = {
+    fullname, phone, email, sex, marital_status, dateofentry, qualification,
+    designation, discipline, staff_type, years_of_experience: years_of_experience + " year(s)", employment_type, contract_type,
+    contract_duration, gross_salary, responsibility_allowances: res_allowance, address,
+    cert_ver_status, wofbi_level, church_membership
+  };
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      authorization: localStorage.getItem('auth-token')
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(resData => {
+    // show success message
+    notifier.success(resData.message);
+    // redirect to modal
+    history.pushState({}, null, '/dashboard/staff');
+  })
+  .catch(error => console.log(error));
+
+  // console.log(data);
 
 }
 
@@ -178,6 +222,7 @@ const handleCreateStaff = () => {
           tx-sans mg-b-10">
           Qualification
         </label>
+
         <select 
           name="qualification" 
           bind:value={qualification} 
@@ -196,9 +241,11 @@ const handleCreateStaff = () => {
           <option value="PGDE">PGDE</option>
           <option value="M.Sc">M.Sc</option>
         </select>
+          
       </div>
+
       <!-- col -->
-      <div class="col-4 col-sm">
+      <div class="col-sm col-sm">
         <label
           for="designation"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
@@ -239,7 +286,7 @@ const handleCreateStaff = () => {
         </select>
       </div>
       <!-- col -->
-      <div class="col-4 col-sm">
+      <div class="col-sm">
         <label
           for="discipline"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
@@ -249,7 +296,7 @@ const handleCreateStaff = () => {
         <input 
           type="text" 
           name="discipline" 
-          bind:value={designation} 
+          bind:value={discipline} 
           class="form-control" 
           id="discipline" 
           required>
@@ -267,7 +314,7 @@ const handleCreateStaff = () => {
         </label>
         <select 
           name="qualification" 
-          bind:value={qualification} 
+          bind:value={staff_type} 
           class="form-control" 
           id="qualification" 
           required>
@@ -339,6 +386,24 @@ const handleCreateStaff = () => {
     <!-- row -->
 
     <div class="row mt-2">
+    <div class="col-3 col-sm">
+        <label
+          for="contract_duration"
+          class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
+          tx-sans mg-b-10">
+          Contract Duration
+        </label>
+        <div class="input-group">
+          <input 
+          type="text" 
+          bind:value={contract_duration} 
+          name="contract_duration"
+          placeholder="1 year, fixed, ..." 
+          class="form-control" 
+          id="contract_duration" 
+          required>
+        </div>
+      </div>
       <div class="col-3 col-sm">
         <label
           for="salary"
@@ -351,7 +416,7 @@ const handleCreateStaff = () => {
             <span class="input-group-text" id="gross_salary">₦</span>
           </div>
           <input 
-          type="text" 
+          type="number" 
           bind:value={gross_salary} 
           name="salary" 
           class="form-control" 
@@ -414,32 +479,42 @@ const handleCreateStaff = () => {
     <!-- row -->
 
     <div class="row mt-2">
-      <!-- <div class="col-6 col-sm">
-        <label
-          class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
-          tx-sans mg-b-10">
-          Cert Ver Status
-        </label>
-        <p class="mg-b-0">{staffData.cert_ver_status}</p>
-      </div> -->
-      <!-- col -->
-      <div class="col-6 col-sm">
-        <label
-          for="wofbi_level"
-          class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
-          tx-sans mg-b-10">
-          Wofbi Level
-        </label>
-        <input 
-          type="text" 
-          bind:value={wofbi_level}
-          name="wofbi_level" 
-          class="form-control" 
-          id="wofbi_level" 
-        >
+      <div class="col-sm-6">
+          <div class="form-group">
+          <label
+            for="cert_ver_status"
+            class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
+            tx-sans">
+            Cert Ver Status
+          </label>
+          <input 
+            type="text" 
+            bind:value={cert_ver_status}
+            name="cert_ver_status" 
+            class="form-control" 
+            id="cert_ver_status" 
+          >
+        </div>
+        <!-- col -->
+        <div class="form-group">
+          <label
+            for="wofbi_level"
+            class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
+            tx-sans ">
+            Wofbi Level
+          </label>
+          <input 
+            type="text" 
+            bind:value={wofbi_level}
+            name="wofbi_level" 
+            class="form-control" 
+            id="wofbi_level" 
+          >
+        </div>
       </div>
+      
       <!-- col -->
-      <div class="col-md">
+      <div class="col-sm-6 col">
         <label
           for="address"
           class="tx-10 tx-medium tx-spacing-1 tx-color-03 tx-uppercase
@@ -451,7 +526,7 @@ const handleCreateStaff = () => {
           bind:value={address} 
           class="form-control" 
           id="address" 
-          rows="3" 
+          rows="5" 
           required
         ></textarea>
       </div>
