@@ -15,9 +15,8 @@
     .then(data => {
       notifier.success(data.message);
       dashboard = data.data;
-      console.log(data.data);
     })
-    .catch(error => handleError(error));
+    .catch(error => handleError(data.message));
   });
 
 </script>

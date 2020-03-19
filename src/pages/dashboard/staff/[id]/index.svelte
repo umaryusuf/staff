@@ -225,14 +225,14 @@
       >
         Queries
       </a>
-      <a href="#!"
+      <!-- <a href="#!"
         class="nav-link {activeTab === "leaves" ? "active": ""}" 
         on:click={changeTab} 
         data-tab-id="leaves" 
         data-toggle="tab"
       >
         Leaves
-      </a>
+      </a> -->
       <a href="#!"
         class="nav-link {activeTab === "transfer" ? "active": ""}" 
         on:click={changeTab} 
